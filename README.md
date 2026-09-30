@@ -12,13 +12,30 @@
 
 ```java  
 public class SpaceMarine {  
-    private Integer id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически    private String name; //Поле не может быть null, Строка не может быть пустой    private Coordinates coordinates; //Поле не может быть null    private java.time.ZonedDateTime creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически    private Chapter chapter; //Поле не может быть null    private long health; //Значение поля должно быть больше 0    private Integer heartCount; //Поле может быть null, Значение поля должно быть больше 0, Максимальное значение поля: 3    private int height;    private MeleeWeapon meleeWeapon; //Поле может быть null}  
+    private Integer id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически    
+    private String name; //Поле не может быть null, Строка не может быть пустой
+    private Coordinates coordinates; //Поле не может быть null
+    private java.time.ZonedDateTime creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
+    private Chapter chapter; //Поле не может быть null
+    private long health; //Значение поля должно быть больше 0
+    private Integer heartCount; //Поле может быть null, Значение поля должно быть больше 0, Максимальное значение поля: 3
+    private int height;
+    private MeleeWeapon meleeWeapon; //Поле может быть null
+}  
 public class Coordinates {  
-    private Long x; //Поле не может быть null    private Double y; //Значение поля должно быть больше -833, Поле не может быть null}  
+    private Long x; //Поле не может быть null
+    private Double y; //Значение поля должно быть больше -833, Поле не может быть null
+}  
 public class Chapter {  
-    private String name; //Поле не может быть null, Строка не может быть пустой    private long marinesCount; //Значение поля должно быть больше 0, Максимальное значение поля: 1000}  
+    private String name; //Поле не может быть null, Строка не может быть пустой
+    private long marinesCount; //Значение поля должно быть больше 0, Максимальное значение поля: 1000
+}  
 public enum MeleeWeapon {  
-    CHAIN_SWORD,    POWER_SWORD,    CHAIN_AXE,    POWER_FIST;}  
+    CHAIN_SWORD,
+    POWER_SWORD,
+    CHAIN_AXE,
+    POWER_FIST;
+}  
 ```  
 
 Разработанная система должна удовлетворять следующим требованиям:
@@ -61,29 +78,33 @@ public enum MeleeWeapon {
 
 ## Шаги, чтобы заставить это работать на гелиосе
 
-1. устанавливаете на гелиос [payara-micro-6.2025.9.jar](https://repo1.maven.org/maven2/fish/payara/extras/payara-micro/6.2025.9/). Конкретно эта версия согласуется с джавой на гелиосе.
-2. создаете бд
+### 1. Подготовка к запуску
+- Устанавливаете на гелиос [payara-micro-6.2025.9.jar](https://repo1.maven.org/maven2/fish/payara/extras/payara-micro/6.2025.9/). Конкретно эта версия согласуется с джавой на гелиосе.
+
+- Перекидываете на гелиос schema.sql и spacemarine.war
+
+- Создаете бд
 ```bash  
 psql -h pg -d studs -f schema.sql
 ```
 Скрипт можно запускать повторно. Он всё пересоздаёт (данные удаляются!).
 
-3. заходите на гелиос
+### 2. Пробрасываете порты
 ```
 ssh -p 2222 -L 8080:localhost:12345 sXXXXXX@helios.cs.ifmo.ru
 ```
 
-4. и прописываете переменные окружения
+### 3. Прописываете переменные окружения
 ```
 export DB_URL=jdbc:postgresql://pg:5432/studs DB_USER=sXXXXXX DB_PASSWORD='...'
 ```
 
-5. наконец запускаете
+### 4. Запуск
 ``` 
 java -jar ~/payara-micro-6.2025.9.jar --deploy ~/spacemarine.war --port 12345 --nocluster
 ```  
-в конце должно `Payara Micro ... ready in ... (ms)`
+В конце лога должно быть `Payara Micro ... ready in ... (ms)`, если оно есть, значит все работает.
 
-6. заходите на сайт `http://localhost:8080/spacemarine`
+Готовый сайт будет по ссылке `http://localhost:8080/spacemarine`
 
 п. с. не забудьте убить бек, как все покажете практику
