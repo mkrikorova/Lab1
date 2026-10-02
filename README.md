@@ -1,6 +1,6 @@
 # Лабораторная работа 1
 
-> [!HINT]
+> [!IMPORTANT]
 > Jakarta EE 10 + CDI + EclipseLink
 
 Запуск сервера на helios производился с помощью Payara Micro 6.2025.9
