@@ -141,7 +141,7 @@ function CreateChapter() {
     if (Object.keys(err).length) return;
     try {
       const c = await api.ops.createChapter({ name: form.name, marinesCount: parseInteger(form.marinesCount) });
-      setResult(`Создан орден #${c.id} «${c.name}»`);
+      setResult(`Создан орден номер ${c.id} «${c.name}»`);
       setForm({ name: '', marinesCount: '' });
     } catch (ex) {
       const fe = ex.fieldErrors ? ex.fieldErrors() : {};
@@ -208,7 +208,7 @@ function DisbandChapter() {
       <div className="inline">
         <select value={id} onChange={(e) => setId(e.target.value)} aria-label="Орден">
           <option value="">— выберите орден —</option>
-          {chapters.map((c) => <option key={c.id} value={c.id}>#{c.id} {c.name}</option>)}
+          {chapters.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
         </select>
         <button className="btn btn-danger" disabled={!id} onClick={() => setConfirm(true)}>Распустить</button>
       </div>

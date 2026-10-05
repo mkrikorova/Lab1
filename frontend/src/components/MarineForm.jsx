@@ -157,7 +157,7 @@ export default function MarineForm({ marine, onClose, onSaved }) {
   return (
     <Modal
       wide
-      title={editing ? `Изменение десантника #${marine.id}` : 'Новый десантник'}
+      title={editing ? `Изменение десантника номер ${marine.id}` : 'Новый десантник'}
       onClose={onClose}
       footer={
         <>
@@ -206,7 +206,7 @@ export default function MarineForm({ marine, onClose, onSaved }) {
             <Field label="Координаты *" error={e('coordinatesId')}>
               <select value={f.coordinatesId} onChange={set('coordinatesId')}>
                 <option value="">— выберите —</option>
-                {(coords || []).map((c) => <option key={c.id} value={c.id}>#{c.id}: x = {c.x}, y = {c.y}</option>)}
+                {(coords || []).map((c) => <option key={c.id} value={c.id}>x = {c.x}, y = {c.y}</option>)}
               </select>
             </Field>
           ) : (
@@ -231,7 +231,7 @@ export default function MarineForm({ marine, onClose, onSaved }) {
             <Field label="Орден *" error={e('chapterId')}>
               <select value={f.chapterId} onChange={set('chapterId')}>
                 <option value="">— выберите —</option>
-                {(chapters || []).map((c) => <option key={c.id} value={c.id}>#{c.id}: {c.name} ({c.marinesCount})</option>)}
+                {(chapters || []).map((c) => <option key={c.id} value={c.id}>{c.name} ({c.marinesCount})</option>)}
               </select>
             </Field>
           ) : (

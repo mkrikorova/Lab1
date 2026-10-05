@@ -203,7 +203,7 @@ function DeleteMarine({ marine, onClose, onDone }) {
       }
     >
       <ErrorBanner>{error}</ErrorBanner>
-      <p>Удалить десантника <b>#{marine.id} «{marine.name}»</b>? Его орден и координаты останутся.</p>
+      <p>Удалить десантника <b>номер {marine.id} «{marine.name}»</b>? Его орден и координаты останутся.</p>
     </Modal>
   );
 }

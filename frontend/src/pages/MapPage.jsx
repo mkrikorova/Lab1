@@ -349,7 +349,7 @@ function MapPopup({ popup, width, height, onOpen, onClose, onZoom }) {
               <button className="map-item" onClick={() => onOpen(m.id)}>
                 <i style={{ background: chapterColor(m.chapter.id) }} />
                 <span className="map-item-name">{m.name}</span>
-                <span className="muted">#{m.id}</span>
+                <span className="muted">{m.id}</span>
                 <span className="map-item-meta muted">
                   {m.chapter.name}
                   {m.meleeWeapon ? ' · ' + WEAPON_LABELS[m.meleeWeapon] : ''}
@@ -360,7 +360,7 @@ function MapPopup({ popup, width, height, onOpen, onClose, onZoom }) {
               <span className="map-item">
                 <i style={{ background: chapterColor(m.chapter.id) }} />
                 <span className="map-item-name">{m.name}</span>
-                <span className="muted">#{m.id}</span>
+                <span className="muted">{m.id}</span>
               </span>
             )}
           </li>

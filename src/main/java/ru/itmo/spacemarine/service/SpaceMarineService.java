@@ -67,7 +67,7 @@ public class SpaceMarineService {
     }
 
     public SpaceMarineDto update(Integer id, SpaceMarineRequest req) {
-        SpaceMarine m = get(id);
+        SpaceMarine m = get(id); // вернул управляемый объект
         apply(m, req); // id и creationDate не меняются
         events.fire(new ChangeEvent(ENTITY, ChangeEvent.Action.UPDATED, id));
         return DtoMapper.toDto(m);

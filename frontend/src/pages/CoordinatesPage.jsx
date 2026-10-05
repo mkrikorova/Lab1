@@ -18,7 +18,7 @@ const config = {
   fromItem: (c) => ({ x: String(c.x), y: String(c.y) }),
   validate: (f) => validateCoordinates(f.x, f.y),
   toBody: (f) => ({ x: parseInteger(f.x), y: parseDecimal(f.y) }),
-  label: (c) => `#${c.id} (${c.x}; ${c.y})`,
+  label: (c) => `${c.id} (${c.x}; ${c.y})`,
   api: api.coordinates,
 };
 
