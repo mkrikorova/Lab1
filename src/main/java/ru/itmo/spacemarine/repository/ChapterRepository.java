@@ -15,7 +15,7 @@ public class ChapterRepository {
     private EntityManager em;
 
     public Optional<Chapter> findById(Integer id) {
-        return Optional.ofNullable(em.find(Chapter.class, id));
+        return Optional.ofNullable(em.find(Chapter.class, id)); // ищет по первичному ключу и явно обрабатывает ответ в виде null
     }
 
     public List<Chapter> findAll() {
@@ -25,10 +25,10 @@ public class ChapterRepository {
     public Chapter save(Chapter chapter) {
         if (chapter.getId() == null) {
             em.persist(chapter);
-            em.flush(); // чтобы сразу получить id от БД и поймать ошибки ограничений
+            em.flush(); // прям щас в  бд, чтобы сразу получить id и поймать ошибки ограничений
             return chapter;
         }
-        return em.merge(chapter);
+        return em.merge(chapter); //копирует состояние объекта в управляемую копию
     }
 
     public void delete(Chapter chapter) {

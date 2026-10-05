@@ -3,6 +3,7 @@ import MarinesPage from './pages/MarinesPage.jsx';
 import ChaptersPage from './pages/ChaptersPage.jsx';
 import CoordinatesPage from './pages/CoordinatesPage.jsx';
 import OperationsPage from './pages/OperationsPage.jsx';
+import MapPage from './pages/MapPage.jsx';
 import { useLiveStatus } from './live.js';
 
 const STATUS_TEXT = { online: 'онлайн', offline: 'нет связи', connecting: 'подключение' };
@@ -17,7 +18,8 @@ export default function App() {
           <NavLink to="/marines">Десантники</NavLink>
           <NavLink to="/chapters">Ордены</NavLink>
           <NavLink to="/coordinates">Координаты</NavLink>
-          <NavLink to="/operations">Спец. Операции</NavLink>
+          <NavLink to="/operations">Спецоперации</NavLink>
+          <NavLink to="/map">Карта</NavLink>
         </nav>
         <div className={'live live-' + status} title="Соединение для обновлений в реальном времени">
           <span className="dot" /> {STATUS_TEXT[status]}
@@ -29,6 +31,7 @@ export default function App() {
           <Route path="/chapters" element={<ChaptersPage />} />
           <Route path="/coordinates" element={<CoordinatesPage />} />
           <Route path="/operations" element={<OperationsPage />} />
+          <Route path="/map" element={<MapPage />} />
           <Route path="*" element={<Navigate to="/marines" replace />} />
         </Routes>
       </main>

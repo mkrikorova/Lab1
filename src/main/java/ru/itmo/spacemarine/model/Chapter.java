@@ -15,7 +15,7 @@ public class Chapter {
     @Column(name = "id", nullable = false, updatable = false)
     private Integer id;
 
-
+    @NotNull
     @NotBlank(message = "Имя ордена не может быть пустым")
     @Column(name = "name", nullable = false)
     private String name;

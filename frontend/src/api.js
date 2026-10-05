@@ -70,6 +70,7 @@ function query(params) {
 export const api = {
   marines: {
     page: (params) => request('GET', 'space-marines' + query(params)),
+    all: () => request('GET', 'space-marines/all'),
     get: (id) => request('GET', `space-marines/${id}`),
     create: (body) => request('POST', 'space-marines', body),
     update: (id, body) => request('PUT', `space-marines/${id}`, body),

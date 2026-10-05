@@ -49,6 +49,11 @@ public class SpaceMarineService {
         return new PageDto<>(content, f.page, f.size, marines.count(f));
     }
 
+    /** Все объекты без пагинации — для визуализации на карте. */
+    public List<SpaceMarineDto> findAll() {
+        return marines.findAll().stream().map(DtoMapper::toDto).toList();
+    }
+
     public SpaceMarineDto findById(Integer id) {
         return DtoMapper.toDto(get(id));
     }

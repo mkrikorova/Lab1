@@ -13,6 +13,8 @@ import ru.itmo.spacemarine.dto.SpaceMarineFilter;
 import ru.itmo.spacemarine.dto.SpaceMarineRequest;
 import ru.itmo.spacemarine.service.SpaceMarineService;
 
+import java.util.List;
+
 @Path("/space-marines")
 @RequestScoped
 @Produces(MediaType.APPLICATION_JSON)
@@ -26,6 +28,13 @@ public class SpaceMarineController {
     @GET
     public PageDto<SpaceMarineDto> list(@BeanParam SpaceMarineFilter filter) {
         return service.findPage(filter);
+    }
+
+    /** Все десантники для карты: GET /api/space-marines/all */
+    @GET
+    @Path("/all")
+    public List<SpaceMarineDto> all() {
+        return service.findAll();
     }
 
     @GET

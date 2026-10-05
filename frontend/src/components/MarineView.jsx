@@ -26,7 +26,7 @@ export default function MarineView({ id, onClose, onEdit }) {
 
   return (
     <Modal
-      title={`Десантник номер ${id}`}
+      title={`Десантник #${id}`}
       onClose={onClose}
       footer={
         <>
@@ -46,12 +46,12 @@ export default function MarineView({ id, onClose, onEdit }) {
             <dt>Рост</dt><dd>{m.height}</dd>
             <dt>Оружие</dt><dd>{m.meleeWeapon ? `${WEAPON_LABELS[m.meleeWeapon]} (${m.meleeWeapon})` : '—'}</dd>
           </dl>
-          <h3 className="sub">Координаты</h3>
+          <h3 className="sub">Координаты #{m.coordinates.id}</h3>
           <dl className="props">
             <dt>x</dt><dd>{m.coordinates.x}</dd>
             <dt>y</dt><dd>{m.coordinates.y}</dd>
           </dl>
-          <h3 className="sub">Орден</h3>
+          <h3 className="sub">Орден #{m.chapter.id}</h3>
           <dl className="props">
             <dt>Название</dt><dd>{m.chapter.name}</dd>
             <dt>Численность</dt><dd>{m.chapter.marinesCount}</dd>

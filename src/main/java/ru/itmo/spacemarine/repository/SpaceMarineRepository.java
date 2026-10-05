@@ -35,6 +35,13 @@ public class SpaceMarineRepository {
         em.remove(em.contains(marine) ? marine : em.merge(marine));
     }
 
+    /** Все десантники вместе с орденом и координатами — для карты. */
+    public List<SpaceMarine> findAll() {
+        return em.createQuery(
+                "SELECT m FROM SpaceMarine m JOIN FETCH m.chapter JOIN FETCH m.coordinates ORDER BY m.id",
+                SpaceMarine.class).getResultList();
+    }
+
     /** Страница таблицы с фильтром (полное совпадение) и сортировкой. */
     public List<SpaceMarine> findPage(SpaceMarineFilter f) {
         CriteriaBuilder cb = em.getCriteriaBuilder();

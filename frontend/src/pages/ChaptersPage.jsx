@@ -18,7 +18,7 @@ const config = {
   fromItem: (c) => ({ name: c.name, marinesCount: String(c.marinesCount) }),
   validate: (f) => validateChapter(f.name, f.marinesCount),
   toBody: (f) => ({ name: f.name, marinesCount: parseInteger(f.marinesCount) }),
-  label: (c) => `${c.name}`,
+  label: (c) => `#${c.id} ${c.name}`,
   api: api.chapters,
 };
 
