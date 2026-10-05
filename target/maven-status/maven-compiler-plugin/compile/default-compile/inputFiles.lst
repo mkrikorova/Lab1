@@ -1,3 +1,4 @@
+/Users/m.krikorova/IdeaProjects/InfSys/spacemarine/src/main/java/ru/itmo/spacemarine/websocket/ChangesEndpoint.java
 /Users/m.krikorova/IdeaProjects/InfSys/spacemarine/src/main/java/ru/itmo/spacemarine/repository/SpaceMarineRepository.java
 /Users/m.krikorova/IdeaProjects/InfSys/spacemarine/src/main/java/ru/itmo/spacemarine/controller/SpecialOperationsController.java
 /Users/m.krikorova/IdeaProjects/InfSys/spacemarine/src/main/java/ru/itmo/spacemarine/dto/CoordinatesDto.java
@@ -15,6 +16,7 @@
 /Users/m.krikorova/IdeaProjects/InfSys/spacemarine/src/main/java/ru/itmo/spacemarine/dto/ChapterDto.java
 /Users/m.krikorova/IdeaProjects/InfSys/spacemarine/src/main/java/ru/itmo/spacemarine/controller/ChapterController.java
 /Users/m.krikorova/IdeaProjects/InfSys/spacemarine/src/main/java/ru/itmo/spacemarine/model/MeleeWeapon.java
+/Users/m.krikorova/IdeaProjects/InfSys/spacemarine/src/main/java/ru/itmo/spacemarine/websocket/SessionRegistry.java
 /Users/m.krikorova/IdeaProjects/InfSys/spacemarine/src/main/java/ru/itmo/spacemarine/service/exception/NotFoundException.java
 /Users/m.krikorova/IdeaProjects/InfSys/spacemarine/src/main/java/ru/itmo/spacemarine/dto/PageDto.java
 /Users/m.krikorova/IdeaProjects/InfSys/spacemarine/src/main/java/ru/itmo/spacemarine/service/ChapterService.java
@@ -23,6 +25,7 @@
 /Users/m.krikorova/IdeaProjects/InfSys/spacemarine/src/main/java/ru/itmo/spacemarine/controller/mapper/ValidationExceptionMapper.java
 /Users/m.krikorova/IdeaProjects/InfSys/spacemarine/src/main/java/ru/itmo/spacemarine/repository/CoordinatesRepository.java
 /Users/m.krikorova/IdeaProjects/InfSys/spacemarine/src/main/java/ru/itmo/spacemarine/service/exception/BadRequestException.java
+/Users/m.krikorova/IdeaProjects/InfSys/spacemarine/src/main/java/ru/itmo/spacemarine/websocket/ChangeBroadcaster.java
 /Users/m.krikorova/IdeaProjects/InfSys/spacemarine/src/main/java/ru/itmo/spacemarine/dto/DtoMapper.java
 /Users/m.krikorova/IdeaProjects/InfSys/spacemarine/src/main/java/ru/itmo/spacemarine/dto/SpaceMarineDto.java
 /Users/m.krikorova/IdeaProjects/InfSys/spacemarine/src/main/java/ru/itmo/spacemarine/service/SpecialOperationsService.java

@@ -91,7 +91,9 @@ public class SpaceMarineService {
         if (req.coordinatesId != null) {
             return coordinatesService.get(req.coordinatesId);
         }
-        return coordinates.save(DtoMapper.toEntity(req.coordinates));
+        Coordinates created = coordinates.save(DtoMapper.toEntity(req.coordinates));
+        events.fire(new ChangeEvent("coordinates", ChangeEvent.Action.CREATED, created.getId()));
+        return created;
     }
 
     /** Либо существующий орден по id, либо новый. */
@@ -102,7 +104,9 @@ public class SpaceMarineService {
         if (req.chapterId != null) {
             return chapterService.get(req.chapterId);
         }
-        return chapters.save(DtoMapper.toEntity(req.chapter));
+        Chapter created = chapters.save(DtoMapper.toEntity(req.chapter));
+        events.fire(new ChangeEvent("chapter", ChangeEvent.Action.CREATED, created.getId()));
+        return created;
     }
 
     private SpaceMarine get(Integer id) {

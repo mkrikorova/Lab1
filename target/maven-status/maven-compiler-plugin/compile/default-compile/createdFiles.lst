@@ -14,10 +14,12 @@ ru/itmo/spacemarine/dto/WeaponGroupDto.class
 ru/itmo/spacemarine/controller/ChapterController.class
 ru/itmo/spacemarine/controller/mapper/GlobalExceptionMapper.class
 ru/itmo/spacemarine/service/exception/LinkedObjectsException.class
+ru/itmo/spacemarine/websocket/SessionRegistry.class
 ru/itmo/spacemarine/dto/SpaceMarineDto.class
 ru/itmo/spacemarine/config/RestConfig.class
 ru/itmo/spacemarine/service/event/ChangeEvent$Action.class
 ru/itmo/spacemarine/model/ZonedDateTimeConverter.class
+ru/itmo/spacemarine/websocket/ChangesEndpoint.class
 ru/itmo/spacemarine/service/exception/BadRequestException.class
 ru/itmo/spacemarine/service/exception/NotFoundException.class
 ru/itmo/spacemarine/dto/SpaceMarineRequest.class
@@ -26,6 +28,7 @@ ru/itmo/spacemarine/model/Coordinates.class
 ru/itmo/spacemarine/model/SpaceMarine.class
 ru/itmo/spacemarine/dto/CoordinatesDto.class
 ru/itmo/spacemarine/model/MeleeWeapon.class
+ru/itmo/spacemarine/websocket/ChangeBroadcaster.class
 ru/itmo/spacemarine/controller/CoordinatesController.class
 ru/itmo/spacemarine/config/DataSourceConfig.class
 ru/itmo/spacemarine/controller/SpecialOperationsController.class

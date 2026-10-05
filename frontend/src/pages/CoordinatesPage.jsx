@@ -1,0 +1,27 @@
+import HelperPage from './HelperPage.jsx';
+import { api } from '../api.js';
+import { parseDecimal, parseInteger, validateCoordinates } from '../validation.js';
+
+const config = {
+  entity: 'coordinates',
+  title: 'Координаты',
+  newLabel: 'Новые координаты',
+  columns: [
+    { title: 'X', render: (c) => c.x, num: true },
+    { title: 'Y', render: (c) => c.y, num: true },
+  ],
+  fields: [
+    { key: 'x', label: 'x *', hint: 'целое число', inputMode: 'numeric' },
+    { key: 'y', label: 'y *', hint: 'больше -833', inputMode: 'decimal' },
+  ],
+  empty: { x: '', y: '' },
+  fromItem: (c) => ({ x: String(c.x), y: String(c.y) }),
+  validate: (f) => validateCoordinates(f.x, f.y),
+  toBody: (f) => ({ x: parseInteger(f.x), y: parseDecimal(f.y) }),
+  label: (c) => `(${c.x}; ${c.y})`,
+  api: api.coordinates,
+};
+
+export default function CoordinatesPage() {
+  return <HelperPage config={config} />;
+}
